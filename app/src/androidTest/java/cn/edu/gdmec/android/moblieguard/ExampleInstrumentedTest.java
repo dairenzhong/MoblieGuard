@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.moblieguard.moblieguard1;
+package cn.edu.gdmec.android.moblieguard;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
