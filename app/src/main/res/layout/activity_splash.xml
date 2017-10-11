@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobileguard.android.gdmec.edu.cn.moblieguard.SplashActivity">
+    tools:context="cn.edu.gdmec.android.moblieguard.moblieguard1.cn.edu.gdmec.android.moblieguard.SplashActivity">
 
     <TextView
         android:layout_width="wrap_content"
