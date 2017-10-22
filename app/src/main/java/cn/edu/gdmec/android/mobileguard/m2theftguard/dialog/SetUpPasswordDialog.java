@@ -12,10 +12,10 @@ import android.widget.TextView;
 import cn.edu.gdmec.android.mobileguard.R;
 
 /**
- * Created by Administrator on 2017/10/11.
+ * Created by DONG on 2017/9/28.
  */
 
- public class SetUpPasswordDialog extends Dialog implements View.OnClickListener{
+public class SetUpPasswordDialog extends Dialog implements View.OnClickListener {
     private TextView mTitleTV;
     public EditText mFirstPWDET;
     public EditText mAffirmET;
@@ -27,23 +27,25 @@ import cn.edu.gdmec.android.mobileguard.R;
         super.onCreate(savedInstanceState);
         initView();
     }
-   public SetUpPasswordDialog(@NonNull Context context){
-       super(context, R.style.dialog_custom);
-   }
+
     private void initView() {
-        mTitleTV=(TextView) findViewById(R.id.tv_setuppwd_title);
-        mFirstPWDET=(EditText) findViewById(R.id.et_firstpwd);
+        mTitleTV = (TextView) findViewById(R.id.tv_setuppwd_title);
+        mFirstPWDET = (EditText) findViewById(R.id.et_firstpwd);
         mAffirmET = (EditText) findViewById(R.id.et_affirm_password);
         findViewById(R.id.btn_ok).setOnClickListener(this);
         findViewById(R.id.btn_cancel).setOnClickListener(this);
     }
+
+    public SetUpPasswordDialog(@NonNull Context context){
+        super(context, R.style.dialog_custom);
+    }
     public void setTitle(String title){
-        if(!TextUtils.isEmpty(title)){
+        if (!TextUtils.isEmpty(title)){
             mTitleTV.setText(title);
         }
     }
     public void setCallBack(MyCallBack myCallBack){
-        this.myCallBack=myCallBack;
+        this.myCallBack = myCallBack;
     }
     @Override
     public void onClick(View view){
@@ -60,8 +62,5 @@ import cn.edu.gdmec.android.mobileguard.R;
     public interface MyCallBack{
         void ok();
         void cancel();
-
-
-
     }
 }

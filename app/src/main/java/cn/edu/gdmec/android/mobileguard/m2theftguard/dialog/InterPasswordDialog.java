@@ -13,29 +13,29 @@ import android.widget.TextView;
 import cn.edu.gdmec.android.mobileguard.R;
 
 /**
- * Created by Administrator on 2017/10/11.
+ * Created by Administrator on 2017/10/6.
  */
 
 public class InterPasswordDialog extends Dialog implements View.OnClickListener {
     private TextView mTitleTV;
     private EditText mInterET;
     private Button mOKBtn;
-    private Button mCancleBtn;
-    private MyCallBack myCallBack;
+    private  Button mCancleBtn;
+    private  MyCallBack mycallBack;
     private Context context;
-    public InterPasswordDialog(@NonNull Context context) {
+    public InterPasswordDialog(@NonNull Context context){
         super(context, R.style.dialog_custom);
         this.context = context;
     }
-
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected  void onCreate(Bundle savedInstanceState){
         setContentView(R.layout.inter_password_dialog);
         super.onCreate(savedInstanceState);
         initView();
+
     }
 
-    private void initView(){
+    private  void initView(){
         mTitleTV = (TextView) findViewById(R.id.tv_interpwd_title);
         mInterET = (EditText) findViewById(R.id.et_inter_password);
         mOKBtn = (Button) findViewById(R.id.btn_comfirm);
@@ -43,31 +43,30 @@ public class InterPasswordDialog extends Dialog implements View.OnClickListener 
         mOKBtn.setOnClickListener(this);
         mCancleBtn.setOnClickListener(this);
     }
-        public void setTitle(String title){
-            if(!TextUtils.isEmpty(title)){
-                mTitleTV.setText(title);
-            }
+    public void setTitle(String title){
+        if (!TextUtils.isEmpty(title)){
+            mTitleTV.setText(title);
         }
+    }
     @Override
-    public void onClick(View view) {
+    public void onClick(View view){
         switch (view.getId()){
             case R.id.btn_comfirm:
-                 myCallBack.confirm();
+                mycallBack.confirm();
                 break;
             case R.id.btn_dismiss:
-                myCallBack.cancel();
+                mycallBack.cancle();
                 break;
         }
     }
     public String getPassword(){
-        return  mInterET.getText().toString();
+        return mInterET.getText().toString();
     }
     public void setCallBack(MyCallBack myCallBack){
-        this.myCallBack = myCallBack;
+        this.mycallBack = myCallBack;
     }
-
     public interface MyCallBack{
         void confirm();
-        void cancel();
+        void cancle();
     }
 }
