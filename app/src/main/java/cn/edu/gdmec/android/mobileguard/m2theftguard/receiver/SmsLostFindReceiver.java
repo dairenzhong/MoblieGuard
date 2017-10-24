@@ -25,7 +25,8 @@ public class SmsLostFindReceiver  extends BroadcastReceiver{
     private ComponentName componentName;
     @Override
     public void onReceive(Context context, Intent intent) {
-            sharedPreferences = context.getSharedPreferences("config", Activity.MODE_PRIVATE);
+            sharedPreferences = context.getSharedPreferences("config",
+                    Activity.MODE_PRIVATE);
         boolean protecting = sharedPreferences.getBoolean("protecting",true);
         if(protecting){
             DevicePolicyManager dpm=
@@ -41,13 +42,13 @@ public class SmsLostFindReceiver  extends BroadcastReceiver{
                 String safephone = sharedPreferences.getString("safephone",null);
                 if(!TextUtils.isEmpty(safephone)& sender.equals(safephone)){
                     if ("#*location*#".equals(body)){
-                    Log.i(TAG,"返回位置信息");
+                    Log.i(TAG,"返回位置信息.");
                     Intent service = new Intent(context,
                             GPSLocationService.class);
                     context.startService(service);
                     abortBroadcast();
                 }else if("#*alarm*#".equals(body)){
-                    Log.i(TAG,"播放报警音乐");
+                    Log.i(TAG,"播放报警音乐.");
                     MediaPlayer player = MediaPlayer.create(context, R.raw.ylzs);
                     player.setVolume(1.0f, 1.0f);
                     player.start();
