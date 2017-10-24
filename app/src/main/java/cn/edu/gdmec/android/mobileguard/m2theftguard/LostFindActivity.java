@@ -77,9 +77,6 @@ public class LostFindActivity extends AppCompatActivity implements View.OnClickL
         finish();
     }
 
-    private void startSetUpActivity1() {
-
-    }
 
 
     @Override
