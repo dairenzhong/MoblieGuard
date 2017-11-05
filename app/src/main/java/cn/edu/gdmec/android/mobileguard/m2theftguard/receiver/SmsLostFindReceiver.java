@@ -33,7 +33,7 @@ public class SmsLostFindReceiver  extends BroadcastReceiver{
                     (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
             Object[] objs = (Object[]) intent.getExtras().get("pdus");
             for (Object obj : objs){
-                SmsMessage smsMessage = SmsMessage.createFromPdu((byte[])obj);
+                SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) obj);
                 String sender = smsMessage.getOriginatingAddress();
                 if (sender.startsWith("+86")){
                     sender = sender.substring(3, sender.length());
