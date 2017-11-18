@@ -106,6 +106,8 @@ public class AppManagerAdapter extends BaseAdapter{
             //添加关于功能
             viewHolder.mAboutAppTV = (TextView) view.findViewById(R.id.tv_about_app);
             //end
+            //新加
+            viewHolder.mAppActivityiconTV = (TextView) view.findViewById(R.id.tv_activityicon_app);
             view.setTag(viewHolder);
         }
         if(appInfo != null) {
@@ -129,7 +131,8 @@ public class AppManagerAdapter extends BaseAdapter{
 
         //添加关于功能
             viewHolder.mAboutAppTV.setOnClickListener(listener);
-
+        //新加
+            viewHolder.mAppActivityiconTV.setOnClickListener(listener);
         return view;
 
     }
@@ -154,6 +157,8 @@ public class AppManagerAdapter extends BaseAdapter{
             TextView mAppSizeTV;
             TextView mAppNameTV;
             LinearLayout mAppOptionLL;
+            //新加
+            TextView mAppActivityiconTV;
 
         }
         class  MyClickListener implements View.OnClickListener{
@@ -184,6 +189,10 @@ public class AppManagerAdapter extends BaseAdapter{
                     break;
                 case R.id.tv_about_app:
                     EngineUtils.AboutAppData(context,appInfo);
+                    break;
+                //新加
+                case R.id.tv_activityicon_app:
+                    EngineUtils.AboutAppActivity(context,appInfo);
                     break;
                  }
             }

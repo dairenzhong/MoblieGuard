@@ -3,25 +3,28 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <include layout="@layout/titlebar"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="10">
 
-     <FrameLayout
-         android:id="@+id/fl_noblacknumber"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/fl_noblacknumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
                     android:id="@+id/fl_noblacknumbericon"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:background="@drawable/no_blacknumbericon"/>
+
                 <TextView
                     style="@style/textview16sp"
                     android:layout_below="@+id/fl_noblacknumbericon"
@@ -31,22 +34,26 @@
                     android:textColor="@color/light_gary"
                     android:textScaleX="1.2"/>
             </RelativeLayout>
-    </FrameLayout>
+        </FrameLayout>
+
         <FrameLayout
             android:id="@+id/fl_haveblacknumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone">
-         <ListView
-             android:id="@+id/lv_blacknumbers"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:dividerHeight="1dp"
-             android:divider="#ffffff"/>
-            </FrameLayout>
-         </RelativeLayout>
 
-        <LinearLayout
+            <ListView
+                android:id="@+id/lv_blacknumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="#ffffff"
+                android:dividerHeight="1dp"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/titlebar"/>
+
+    <LinearLayout
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
