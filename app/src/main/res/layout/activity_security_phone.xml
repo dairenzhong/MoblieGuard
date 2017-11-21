@@ -3,7 +3,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
+    <include layout="@layout/titlebar"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,7 +51,7 @@
         </FrameLayout>
     </RelativeLayout>
 
-    <include layout="@layout/titlebar"/>
+
 
     <LinearLayout
             android:gravity="center"
