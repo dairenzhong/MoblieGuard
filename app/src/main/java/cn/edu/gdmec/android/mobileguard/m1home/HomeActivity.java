@@ -24,6 +24,8 @@ import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.MD5Utils;
 import cn.edu.gdmec.android.mobileguard.m3communicationguard.SecurityPhoneActivity;
 import cn.edu.gdmec.android.mobileguard.m4appmanager.AppManagerActivity;
 import cn.edu.gdmec.android.mobileguard.m5virusscan.VirusScanActivity;
+import cn.edu.gdmec.android.mobileguard.m6cleancache.CacheClearListActivity;
+import cn.edu.gdmec.android.mobileguard.m6cleancache.CleanCacheActivity;
 
 //没事改一下
 public class HomeActivity extends AppCompatActivity {
@@ -68,6 +70,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case 3:
                         startActivity(VirusScanActivity.class);
+                        break;
+                    case 4:
+                        startActivity(CacheClearListActivity.class);
                         break;
                 }
             }
