@@ -69,7 +69,7 @@ public class TrafficMonitoringService extends Service {
                  newGprs = mobileRxBytes + mobileTxBytes;
              }
              if (moblieGPRS == -1){
-                 dao.insertToadyGPRS(newGprs);
+                 dao.insertTodayGPRS(newGprs);
              }else{
                  if (moblieGPRS<0){
                      moblieGPRS = 0;
