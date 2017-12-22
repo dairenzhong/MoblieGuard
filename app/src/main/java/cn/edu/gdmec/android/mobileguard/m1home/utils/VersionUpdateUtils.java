@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.webkit.MimeTypeMap;
@@ -150,7 +151,7 @@ public class VersionUpdateUtils {
             public void onClick(DialogInterface dialogInterface, int i) {
                 //下载apk
                 downloadNewApk(versionEntity.apkurl);
-                enterHome();
+                //enterHome();
             }
         });
         builder.setNegativeButton("暂不升级", new DialogInterface.OnClickListener() {
@@ -193,7 +194,7 @@ public class VersionUpdateUtils {
         request.setVisibleInDownloadsUi(true);
 
         //sdcard的目录下的download文件夹，必须设置
-        request.setDestinationInExternalPublicDir("/download/", targetFile);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, targetFile);
         //request.setDestinationInExternalFilesDir(),也可以自己制定下载路径
 
         //将下载请求加入下载队列
@@ -219,7 +220,6 @@ public class VersionUpdateUtils {
                 downloadCallback.afterDownload(filename);
             }
         };
-
         context.registerReceiver(broadcastReceiver, intentFilter);
     }
     public interface DownloadCallback{
