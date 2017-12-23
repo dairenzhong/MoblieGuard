@@ -151,7 +151,7 @@ public class VersionUpdateUtils {
             public void onClick(DialogInterface dialogInterface, int i) {
                 //下载apk
                 downloadNewApk(versionEntity.apkurl);
-                //enterHome();
+                enterHome();
             }
         });
         builder.setNegativeButton("暂不升级", new DialogInterface.OnClickListener() {
@@ -167,7 +167,7 @@ public class VersionUpdateUtils {
 
 
     protected void downloadNewApk(String apkurl){
-        DownloadUtils downLoadUtils = new DownloadUtils();
+        DownloadUtils downloadUtils = new DownloadUtils();
         String filename = "downloadfile";
         String suffixes="avi|mpeg|3gp|mp3|mp4|wav|jpeg|gif|jpg|png|apk|exe|pdf|rar|zip|docx|doc|apk|db";
         Pattern pat=Pattern.compile("[\\w]+[\\.]("+suffixes+")");//正则判断
@@ -194,7 +194,7 @@ public class VersionUpdateUtils {
         request.setVisibleInDownloadsUi(true);
 
         //sdcard的目录下的download文件夹，必须设置
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, targetFile);
+        request.setDestinationInExternalPublicDir("/download/", targetFile);
         //request.setDestinationInExternalFilesDir(),也可以自己制定下载路径
 
         //将下载请求加入下载队列

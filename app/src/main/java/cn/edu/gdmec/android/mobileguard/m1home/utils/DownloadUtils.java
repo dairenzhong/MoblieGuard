@@ -26,7 +26,7 @@ public class DownloadUtils {
         request.setVisibleInDownloadsUi(true);
 
         //sdcard的目录下的download文件夹，必须设置
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, targetFile);
+        request.setDestinationInExternalPublicDir("/download/",targetFile);
         //request.setDestinationInExternalFilesDir(),也可以自己制定下载路径
 
         //将下载请求加入下载队列
