@@ -148,6 +148,7 @@ public class CacheClearListActivity extends AppCompatActivity implements View.On
     private class MyPackObserver extends
             android.content.pm.IPackageStatsObserver.Stub{
         private PackageInfo info;
+
         public MyPackObserver(PackageInfo info){
             this.info = info;
         }
