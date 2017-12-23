@@ -148,6 +148,7 @@ public class CleanCacheActivity extends AppCompatActivity implements View.OnClic
 
         }
     }
+    //jjkj
     private void cleanAll(){
         Method[] methods = PackageManager.class.getMethods();
         for (Method method:methods){
