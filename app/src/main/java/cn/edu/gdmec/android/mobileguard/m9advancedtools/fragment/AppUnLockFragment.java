@@ -35,7 +35,7 @@ public class AppUnLockFragment extends Fragment {
     private Uri uri = Uri.parse(App.APPLOCK_CONTENT_URI);
     private List<AppInfo> appInfos;
     private Handler mhandler = new Handler(){
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 100:
                     unlockApps.clear();

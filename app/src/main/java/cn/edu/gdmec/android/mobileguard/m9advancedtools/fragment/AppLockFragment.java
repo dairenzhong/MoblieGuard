@@ -42,7 +42,7 @@ public class AppLockFragment extends Fragment {
     private AppLockAdapter adapter;
     private Uri uri = Uri.parse(App.APPLOCK_CONTENT_URI);
     private Handler mHandler = new Handler(){
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 10:
                     mLockApps.clear();
@@ -77,13 +77,10 @@ public class AppLockFragment extends Fragment {
         mLockCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                //Intent intent = new Intent(context, AppLockService.class);
                 final Intent intent = new Intent();
                 ComponentName componentName = new ComponentName("cn.edu.gdmec.android.mobileguard"
                         ,"cn.edu.gdmec.android.mobileguard.m9advancedtools.service.AppLockService");
                 intent.setComponent(componentName);
-                //intent.setAction("cn.edu.gdmec.android.mobileguard.m9advancedtools.m9advancedtools.service.AppLockService");
-
                 if (b){
                     context.startService(intent);
                 }else{
